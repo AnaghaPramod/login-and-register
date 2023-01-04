@@ -1,0 +1,27 @@
+
+
+<div>
+  <div class="row">
+      <div class="col-4"></div>
+      <form [formGroup]="registerForm" class="bk col-4 mt-5 border border-5" style="box-shadow: 10px 10px 10px ;">
+          <div class="text-center">
+              <img class="img mt-4" src="../../assets/id.png" alt="">
+              </div>
+          <h4 class="h4 text-center mt-2 mb-4">REGISTER</h4>
+          <input formControlName="uname" type="text" class="form form-control  mb-3 " id="reg_name" placeholder="Username" style="  box-shadow: inset 0 0 15px -2px #40654f;">
+          <div *ngIf="this.registerForm.get('uname')?.errors && this.registerForm.get('uname')?.touched" style="color:rgb(151, 29, 29);" class="mb-3">invalid username</div>
+          <input formControlName="id" type="text" class="form form-control mb-3 " id="reg_id" placeholder="user id" style=" box-shadow: inset 0 0 15px -2px #40654f;">
+          <div *ngIf="this.registerForm.get('id')?.errors && this.registerForm.get('id')?.touched" style="color:rgb(151, 29, 29);" class="mb-3">invalid userid</div>
+          <input formControlName="pswd" type="password" class="form form-control mb-3" id="reg_pswd" placeholder="password" style=" box-shadow: inset 0 0 15px -2px #40654f;">
+          <div *ngIf="this.registerForm.get('pswd')?.errors && this.registerForm.get('pswd')?.touched" style="color:rgb(151, 29, 29);" class="mb-3">invalid password</div>
+          <div  class=" d-grid gap-2">
+              <button type="button" id="btn" class="ab btn btn-primary mb-3 shadow-lg" (click)="register()">Register</button>
+          </div>
+          <div class=" text-center mb-4 " >
+              <a routerLink="" style="text-decoration:none;">Sign in</a>
+          </div>
+          
+        </form>
+      <div class="col-4"></div>
+  </div>
+</div>
